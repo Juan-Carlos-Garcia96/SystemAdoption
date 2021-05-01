@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Inicio {
 
-
+     static  int number;
 
 
     public static int welcomeUi(){
@@ -19,6 +19,28 @@ public class Inicio {
         System.out.println(messageWelcome);
         int option = sc.nextInt();
         return option;
+    }
+
+    public  static int  veryAdmin(int pass){
+        Scanner sc = new Scanner(System.in);
+
+
+            switch(pass){
+                case 12345:
+                    System.out.println("Bienvenido administrador \n");
+                    System.out.println("Que opcion eliges\n ");
+                    System.out.println(" 1. Registrar nuevo animal\n");
+                    System.out.println(" 2. Actualizar datos de  animal\n");
+                    System.out.println(" 3. Consultar  animales\n");
+                    System.out.println(" 4. Eliminar un registro de animal\n");
+                    number = sc.nextInt();
+                    break;
+                default:
+                    System.out.println("Incorrecto intenta de nuevo");
+                    break;
+            }
+            return number;
+
     }
 
 }
