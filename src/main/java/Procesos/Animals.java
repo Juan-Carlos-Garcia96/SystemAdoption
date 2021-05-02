@@ -2,11 +2,11 @@ package Procesos;
 
 public class Animals {
 
-    private int id;
-    private String name;
-    private String type;
-    private String food;
-    private int quantity;
+    protected int id;
+    protected String name;
+    protected String type;
+    protected String food;
+    protected int quantity;
 
     Animals(){}
 
@@ -16,7 +16,6 @@ public class Animals {
         this.quantity = quantity;
         this.type = type;
     }
-
     public int getId() {
         return id;
     }
@@ -55,5 +54,6 @@ public class Animals {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
+
 }
+    }

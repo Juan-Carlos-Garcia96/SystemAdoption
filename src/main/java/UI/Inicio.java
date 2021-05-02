@@ -1,5 +1,7 @@
 package UI;
 
+import UserServices.ServiceAdoptionAdmin;
+
 import java.util.Scanner;
 
 public class Inicio {
@@ -31,7 +33,9 @@ public class Inicio {
      * */
     public  static int  veryAdmin(int pass){
         Scanner sc = new Scanner(System.in);
-
+            /**
+             * Menu de  administrador para operaciones con animales
+             * */
 
             switch(pass){
                 case 12345:
@@ -55,10 +59,11 @@ public class Inicio {
      * Método que evalua la eleccion y direge  segun la opcion
      * */
 
-    public static void options(int election){
+    public static void operations(int election){
 
         switch(election){
             case 1:
+                ServiceAdoptionAdmin.registrarAnimal();
                 break;
             case 2:
                 break;
