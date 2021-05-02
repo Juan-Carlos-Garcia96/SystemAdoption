@@ -21,6 +21,14 @@ public class Inicio {
         return option;
     }
 
+
+    /**
+     * Validacion de usuario como administrador, temporalmente comparado con un swicth
+     * Meta revisar con una base de datos
+     *
+     * @param pass  el método recibe este parametro para evaluar si es un administrador
+     *              o no esta registrado
+     * */
     public  static int  veryAdmin(int pass){
         Scanner sc = new Scanner(System.in);
 
@@ -41,6 +49,24 @@ public class Inicio {
             }
             return number;
 
+    }
+
+    /**
+     * Método que evalua la eleccion y direge  segun la opcion
+     * */
+
+    public static void options(int election){
+
+        switch(election){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
     }
 
 }
