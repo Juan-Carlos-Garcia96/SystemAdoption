@@ -30,11 +30,18 @@ public class ServiceAdoptionAdmin {
         AdoptionDAO.registrarAnimal(animals);
 
     }
-    public static void consultaAnimals(){
+    public static void consultaAnimalsGeneral(){
 
-        AdoptionDAO.consultaAnimals();
+        AdoptionDAO.consultaAnimalsGeneral();
 
+    }
+    public static void consultaAnimalsPerro(){
 
+        AdoptionDAO.consultaAnimalsPerros();
+
+    }
+    public static  void  consultaAnimalsReptil(){
+        AdoptionDAO.consultaAnimalsReptiles();
     }
     public static void actualizarDatosAnimales(){
 

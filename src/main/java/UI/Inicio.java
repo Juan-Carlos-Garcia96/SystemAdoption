@@ -69,7 +69,29 @@ public class Inicio {
             case 2:
                 break;
             case 3:
-                ServiceAdoptionAdmin.consultaAnimals();
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Ingresa el numero segun  el tipo de animal que quiereas consultar ");
+                System.out.println("1. Peros \n2. Reptiles\n3. Gatos\n4. Todos");
+                int option = sc.nextInt();
+
+                /**
+                 * @param option : es un valor que recibe del administrador donde permite hacer una conulta
+                 *               con un  query en especifico para cada tipo de animal, como perros, reptiles gatos etc.
+                 *
+                 * */
+                switch (option){
+                    case 1:
+                        ServiceAdoptionAdmin.consultaAnimalsPerro();
+                        break;
+                    case 2:
+                        ServiceAdoptionAdmin.consultaAnimalsReptil();
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        ServiceAdoptionAdmin.consultaAnimalsGeneral();
+                        break;
+                }
                 break;
             case 4:
                 break;

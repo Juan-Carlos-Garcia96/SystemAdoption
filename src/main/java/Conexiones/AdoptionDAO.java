@@ -41,7 +41,7 @@ public class AdoptionDAO {
         }
 
     }
-    public static void consultaAnimals(){
+    public static void consultaAnimalsGeneral(){
         Coneccion conexion_db = new Coneccion();
 
         PreparedStatement ps = null;
@@ -66,10 +66,73 @@ public class AdoptionDAO {
        }catch(Exception e){
            System.out.println(e);
        }
+
         }catch (SQLException ex){
             System.out.println(ex);
         }
 
+    }
+
+    public static void consultaAnimalsPerros(){
+        Coneccion conexion_db = new Coneccion();
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try(Connection cone = conexion_db.get_sConection()){
+
+            try{
+                String queryConsult = "SELECT * FROM systemadoption.animals WHERE type LIKE 'perro'";
+                ps = cone.prepareStatement(queryConsult);
+                rs = ps.executeQuery();
+
+                while(rs.next()){
+                    System.out.println(" El id es : " + rs.getInt("id"));
+                    System.out.println("El nombre es "+ rs.getString("name"));
+                    System.out.println("Es un : " + rs.getString("type"));
+                    System.out.println("Se alimentan de : " + rs.getString("food"));
+                    System.out.println("Tenemos una existencia de " + rs.getInt("quantity"));
+                    System.out.println("-------------------");
+
+                }
+
+            }catch(Exception e){
+                System.out.println(e);
+            }
+
+        }catch (SQLException ex){
+            System.out.println(ex);
+        }
+
+    }
+
+    public static void  consultaAnimalsReptiles(){
+        Coneccion conec = new Coneccion();
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try( Connection conexion =  conec.get_sConection()){
+
+            try{
+                String queryReptil = " SELEC * FROM sysemadoption.animals WHERE type LIKE 'reptil'";
+                ps = conexion.prepareStatement(queryReptil);
+                rs = ps.executeQuery();
+
+                while(rs.next()){
+
+                    System.out.println(" El id es "+ rs.getInt("id"));
+                    System.out.println("El nombre es "+ rs.getString("name"));
+                    System.out.println("Es un : " + rs.getString("type"));
+                    System.out.println("Se alimentan de : " + rs.getString("food"));
+                    System.out.println("Tenemos una existencia de " + rs.getInt("quantity"));
+                    System.out.println("-------------------");
+                }
+            }catch (Exception e){
+                System.out.println(e);
+            }
+
+        }catch (SQLException ex){
+            System.out.println(ex);
+        }
     }
     public static void actualizarDatosAnimales(){
 
