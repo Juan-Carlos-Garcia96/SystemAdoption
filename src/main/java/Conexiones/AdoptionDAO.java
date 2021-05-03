@@ -113,7 +113,7 @@ public class AdoptionDAO {
         try( Connection conexion =  conec.get_sConection()){
 
             try{
-                String queryReptil = " SELEC * FROM sysemadoption.animals WHERE type LIKE 'reptil'";
+                String queryReptil = " SELECT * FROM systemadoption.animals WHERE type LIKE 'reptil'";
                 ps = conexion.prepareStatement(queryReptil);
                 rs = ps.executeQuery();
 
