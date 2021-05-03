@@ -8,7 +8,7 @@ public class Animals {
     protected String food;
     protected int quantity;
 
-    Animals(){}
+    public Animals(){}
 
     Animals(String name,  String type,  int  quantity,   String  food  ){
         this.name = name;

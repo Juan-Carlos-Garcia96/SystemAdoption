@@ -55,6 +55,7 @@ public class Inicio {
 
     }
 
+
     /**
      * Método que evalua la eleccion y direge  segun la opcion
      * */
@@ -68,6 +69,7 @@ public class Inicio {
             case 2:
                 break;
             case 3:
+                ServiceAdoptionAdmin.consultaAnimals();
                 break;
             case 4:
                 break;
