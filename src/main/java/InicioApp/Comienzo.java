@@ -17,7 +17,7 @@ public class Comienzo {
         }while (electio >= 3);
 
         /**
-         * Validacion de administrador
+         * Validacion de administrador y menu de usuario
          * */
         switch (electio){
 
@@ -27,6 +27,10 @@ public class Comienzo {
                 int pass = sc.nextInt();
                 int option = veryAdmin(pass);
                 operations(option);
+                break;
+
+            case 2:
+            operationClient();
 
         }
 
