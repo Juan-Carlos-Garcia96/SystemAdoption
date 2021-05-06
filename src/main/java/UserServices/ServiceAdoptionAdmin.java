@@ -48,12 +48,16 @@ public class ServiceAdoptionAdmin {
     }
     public static void actualizarDatosAnimalesType(){
         Scanner sc = new Scanner(System.in);
+        System.out.println("Ingresa el Id del animal que deseas modificar \n  si no se conoce el id, te pedimos revisarlo en consulta de animales ");
+        int id_modify = sc.nextInt();
         System.out.println("Ingresa el typo correcto al que pertenece este animal: ");
-        String typ = sc.nextLine();
+        String typ = sc.next();
 
-        Animals animals = new Animals();
-        animals.setType(typ);
+        Animals animalsUpdate = new Animals();
+        animalsUpdate.setType(typ);
+        animalsUpdate.setId(id_modify);
 
+        AdoptionDAO.actualizarDatosAnimalesTypes(animalsUpdate);
     }
     public static void elminiarAnimal(){
 

@@ -134,7 +134,7 @@ public class AdoptionDAO {
             System.out.println(ex);
         }
     }
-    public static void actualizarDatosAnimalesTypes(){
+    public static void actualizarDatosAnimalesTypes(Animals animals){
     Coneccion conection_db = new Coneccion();
 
     PreparedStatement ps = null;
@@ -142,9 +142,12 @@ public class AdoptionDAO {
     try(Connection conexion = conection_db.get_sConection()){
         try{
 
-            String queryUpdate = "UPDATE systemadoption.animals SET type = '?' WHERE id = ?";
+            String queryUpdate = "UPDATE systemadoption.animals SET type = ? WHERE id = ?";
             ps = conexion.prepareStatement(queryUpdate);
+            ps.setString(1,animals.getType());
+            ps.setInt(2,animals.getId());
             ps.executeUpdate();
+            System.out.println("Actualizacion correcta, se actualizo: " + animals.getType() );
 
 
         }catch (Exception e){
