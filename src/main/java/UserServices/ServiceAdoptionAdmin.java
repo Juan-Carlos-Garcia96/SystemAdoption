@@ -10,6 +10,9 @@ import java.util.Scanner;
 public class ServiceAdoptionAdmin {
 
 
+
+
+
     public static void registrarAnimal(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingresa el nombre del animal");
@@ -43,9 +46,13 @@ public class ServiceAdoptionAdmin {
     public static  void  consultaAnimalsReptil(){
         AdoptionDAO.consultaAnimalsReptiles();
     }
-    public static void actualizarDatosAnimales(){
+    public static void actualizarDatosAnimalesType(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingresa el typo correcto al que pertenece este animal: ");
+        String typ = sc.nextLine();
 
-
+        Animals animals = new Animals();
+        animals.setType(typ);
 
     }
     public static void elminiarAnimal(){

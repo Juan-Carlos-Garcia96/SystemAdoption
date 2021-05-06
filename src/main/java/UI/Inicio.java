@@ -92,6 +92,24 @@ public class Inicio {
                 ServiceAdoptionAdmin.registrarAnimal();
                 break;
             case 2:
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Ingresa que dato deseas modificar ");
+                System.out.println("1. Nombre\n2. Tipo\n3. Cantidad\n4. Alimento");
+                int option = sc.nextInt();
+                switch (option){
+                    case 1:
+                        break;
+                    case 2:
+                        ServiceAdoptionAdmin.actualizarDatosAnimalesType();
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
+
                 break;
             case 3:
                 consultasAnimales();
