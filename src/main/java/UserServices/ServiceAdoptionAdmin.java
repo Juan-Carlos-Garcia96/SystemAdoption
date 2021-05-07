@@ -59,6 +59,20 @@ public class ServiceAdoptionAdmin {
 
         AdoptionDAO.actualizarDatosAnimalesTypes(animalsUpdate);
     }
+    public static void  actualizarDatosAnimalsName(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingresa el Id el cual deseas actualizar");
+        int id = sc.nextInt();
+        System.out.println("Ingresa el nombre a modificar ");
+        String nam = sc.next();
+
+        Animals animalsName = new Animals();
+        animalsName.setId(id);
+        animalsName.setName(nam);
+        AdoptionDAO.actualizaDatosAnimalesName(animalsName);
+
+
+    }
     public static void elminiarAnimal(){
 
     }

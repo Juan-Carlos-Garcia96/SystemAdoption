@@ -98,6 +98,7 @@ public class Inicio {
                 int option = sc.nextInt();
                 switch (option){
                     case 1:
+                        ServiceAdoptionAdmin.actualizarDatosAnimalsName();
                         break;
                     case 2:
                         ServiceAdoptionAdmin.actualizarDatosAnimalesType();

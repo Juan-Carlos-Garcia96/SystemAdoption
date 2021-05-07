@@ -161,6 +161,29 @@ public class AdoptionDAO {
 
 
     }
+    public static void actualizaDatosAnimalesName(Animals animals) {
+        Coneccion db_conection = new Coneccion();
+
+        PreparedStatement ps = null;
+
+        try (Connection conexion = db_conection.get_sConection()) {
+
+            try {
+                String queryUpdateName = "UPDATE systemadoption.animals SET name = ? WHERE id = ?";
+                ps = conexion.prepareStatement(queryUpdateName);
+                ps.setString(1, animals.getName());
+                ps.setInt(2, animals.getId());
+                ps.executeUpdate();
+                System.out.println("acabas de actualizar: " + animals.getName());
+
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
     public static void elminiarAnimal(){
 
     }
