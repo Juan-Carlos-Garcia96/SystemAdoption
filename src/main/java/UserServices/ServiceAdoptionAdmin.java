@@ -74,6 +74,14 @@ public class ServiceAdoptionAdmin {
 
     }
     public static void elminiarAnimal(){
+        Scanner sc = new Scanner(System.in) ;
+        System.out.println("Ingresa el id del animal a eliminar ");
+        int id = sc.nextInt();
+
+        Animals animalDelete= new Animals();
+        animalDelete.setId(id);
+
+        AdoptionDAO.elminiarAnimal(animalDelete);
 
     }
 }

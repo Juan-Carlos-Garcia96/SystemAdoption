@@ -184,7 +184,26 @@ public class AdoptionDAO {
             System.out.println(e);
         }
     }
-    public static void elminiarAnimal(){
+    public static void elminiarAnimal(Animals animals){
+    Coneccion db_dc = new Coneccion();
+
+    PreparedStatement ps = null;
+
+    try(Connection conexion = db_dc.get_sConection() ){
+        try{
+            String queryDelete="DELETE FROM systemadoption.animals   WHERE  id = ?  ";
+            ps = conexion.prepareStatement(queryDelete);
+            ps.setInt(1, animals.getId());
+            ps.executeUpdate();
+            System.out.println("Animal eliminado exitosamente !! con el id: " + animals.getId());
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+    }catch (SQLException ex){
+        System.out.println(ex);
+    }
 
     }
 

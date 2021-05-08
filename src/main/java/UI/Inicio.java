@@ -56,7 +56,7 @@ public class Inicio {
     }
 
     /**
-     * Método que realiza consulta de animales:
+     * Método realiza la opreacion de un administrador, alta, baja actualizacion y consulta de animales
      */
 
     public static void consultasAnimales() {
@@ -82,7 +82,7 @@ public class Inicio {
 
 
     /**
-     * Método que evalua la eleccion y direge  segun la opcion
+     * Método trabaja con actualizacion de datos de animales
      */
 
     public static void operations(int election) {
@@ -117,6 +117,7 @@ public class Inicio {
 
                 break;
             case 4:
+                ServiceAdoptionAdmin.elminiarAnimal();
                 break;
         }
     }
