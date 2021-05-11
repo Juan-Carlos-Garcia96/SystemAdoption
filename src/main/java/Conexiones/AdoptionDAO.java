@@ -184,6 +184,28 @@ public class AdoptionDAO {
             System.out.println(e);
         }
     }
+    public static  void  actualizarDatosAnimalesQuantity(Animals animal){
+        Coneccion coneccion_db = new Coneccion();
+        PreparedStatement ps = null;
+
+        try(Connection conexion =  coneccion_db.get_sConection()){
+            try{
+                String queryQuantity = "UPDATE  systemadoption.aniamls SET quuantity = ? WHERE id = ?";
+                ps = conexion.prepareStatement(queryQuantity);
+                ps.setInt(1, animal.getId() );
+                ps.setInt(2, animal.getQuantity());
+                ps.executeUpdate();
+
+                System.out.println("La cantidad esta actualizada, tu modificaste " + animal.getQuantity());
+            }catch ( Exception ex){
+                System.out.println(ex);
+            }
+
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+
+    }
     public static void elminiarAnimal(Animals animals){
     Coneccion db_dc = new Coneccion();
 

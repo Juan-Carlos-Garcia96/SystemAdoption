@@ -104,6 +104,7 @@ public class Inicio {
                         ServiceAdoptionAdmin.actualizarDatosAnimalesType();
                         break;
                     case 3:
+                        ServiceAdoptionAdmin.actualizarDatosAnimalesQuantity();
                         break;
                     case 4:
                         break;

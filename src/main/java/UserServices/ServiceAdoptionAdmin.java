@@ -73,6 +73,18 @@ public class ServiceAdoptionAdmin {
 
 
     }
+    public static  void  actualizarDatosAnimalesQuantity(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingresa el Id el cual deseas actualizar");
+        int id = sc.nextInt();
+        System.out.println("Ingresa la cantidad a modificar ");
+        int quanti = sc.nextInt();
+
+        Animals animalQuantity = new Animals();
+        animalQuantity.setId(id);
+        animalQuantity.setQuantity(quanti);
+        AdoptionDAO.actualizarDatosAnimalesQuantity(animalQuantity);
+    }
     public static void elminiarAnimal(){
         Scanner sc = new Scanner(System.in) ;
         System.out.println("Ingresa el id del animal a eliminar ");
